@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Connect</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../styles/tailwindcss.css">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+
+        #travel-details {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <%- include('header'); %>
+
+    <section class="text-gray-400 bg-gray-900 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Welcome Back!👋🏻</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Hope you are doing fabulous⚡️<br>Enter the details and find the best friend for your next Travel.</p>
+        </div>
+
+
+
+
+        <form action="/create" method="post">
+
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="fullname" class="leading-7 text-sm text-gray-400">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="gender" class="leading-7 text-sm text-gray-400">Gender</label>
+                <input type="text" id="gender" name="gender" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="age" class="leading-7 text-sm text-gray-400">Age</label>
+                <input type="number" id="age" name="age" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="mode_of_transport" class="leading-7 text-sm text-gray-400">Mode of Transport</label>
+                <input type="text" id="mode_of_transport" name="mode_of_transport" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <br>
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white" id="travel-details">Travel Details</h1>
+            </div>
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="from_place" class="leading-7 text-sm text-gray-400">From</label>
+                <input type="text" id="from_place" name="from_place" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="to_place" class="leading-7 text-sm text-gray-400">To</label>
+                <input type="text" id="to_place" name="to_place" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+
+            </div>
+
+            <div class=" flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="date_start" class="leading-7 text-sm text-gray-400">Date Start</label>
+                <input type="text" id="date_start" name="date_start" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="date_end" class="leading-7 text-sm text-gray-400">Date End</label>
+                <input type="text" id="date_end" name="date_end" required class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <br>
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+                <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Search</button>
+            </div>
+        
+        
+        </form>
+
+      </div>
+    </section>
+
+    <%- include('footer'); %>
+</body>
+</html>
